@@ -5,6 +5,7 @@ import AOS from 'aos';
 import { useSpring, animated } from 'react-spring';
 
 import { Header } from '../../components/header';
+import { Footer } from '../../components/footer';
 
 import imgSecurity from '../../assets/securityImage.png';
 import contactUs from '../../assets/secondContainer.png';
@@ -96,7 +97,7 @@ export const Home = () => {
                         </div>
                     </div>
                     <div className={`${styles.imageBackground} ${styles.thirdBackground}`}></div>
-                    <div className={styles.homeItem} style={{ height: window.screen.height }}>
+                    <div className={styles.homeFourItem} style={{ height: window.screen.height }}>
                         <div className={styles.geralContainer}>
                             <div data-aos="fade-right">
                                 <div className={`${styles.geralTextContainer} ${styles.thirdTextContainer}`}>

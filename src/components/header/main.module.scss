@@ -30,13 +30,18 @@
     align-items: center;
     justify-content: center;
 
-    gap: 44px;
+    gap: 15px;
 }
 
 .redirectItem {
     display: flex;
     align-items: center;
     gap: 9px;
+
+    padding: 0 20px;
+    border-radius: 100px;
+
+    cursor: pointer;
 
     img {
         width: 35px;
@@ -54,6 +59,10 @@
     }
 }
 
+.redirectItem:hover {
+    background-color: #20222b;
+}
+
 .primaryButton {
     button {
         outline: none;
@@ -62,6 +71,9 @@
 
         width: 141px;
         height: 40px;
+
+        cursor: pointer;
+        background-color: white;
 
         p {
             margin: 0;
@@ -75,10 +87,17 @@
 }
 
 
+
 @media (max-width: 1504px) {
     .headerContent {
         max-width: 80%;
         margin: auto;
         justify-content: space-between;
+    }
+}
+
+@media (max-width: 1005px) {
+    .redirectItem {
+        display: none;
     }
 }
