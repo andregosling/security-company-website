@@ -1,0 +1,84 @@
+@import "../../global/stylesVars";
+
+.personHeader {
+    width: 100%;
+    background-color: $blackColor;
+}
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $containerMaxWIdth;
+    margin: auto;
+
+}
+
+.leftPart, .rightPart {
+    margin: 1% 0 0 0;
+}
+
+.leftPart {
+    img {
+        height: 70.37px;
+        left: 129px;
+    }
+}
+
+.rightPart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 44px;
+}
+
+.redirectItem {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    img {
+        width: 35px;
+        height: 35px;
+        margin-bottom: -2px;
+    }
+
+    p {
+        color: white;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: -0.02em;
+    }
+}
+
+.primaryButton {
+    button {
+        outline: none;
+        border: none;
+        border-radius: 100px;
+
+        width: 141px;
+        height: 40px;
+
+        p {
+            margin: 0;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 23px;
+            letter-spacing: -0.02em;
+        }
+    }
+}
+
+
+@media (max-width: 1504px) {
+    .headerContent {
+        max-width: 80%;
+        margin: auto;
+        justify-content: space-between;
+    }
+}

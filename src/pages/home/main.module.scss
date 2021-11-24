@@ -1,0 +1,314 @@
+@import "../../global/stylesVars";
+
+.homeMain {
+    width: 100%;
+    height: 100vh;
+}
+
+.homeFirstItem {
+    padding-top: 5%;
+    background-color: $blackColor;
+}
+
+.homeSecondItem {
+    padding-top: 5%;
+    background-color: $whiteColor;
+}
+
+.homeThirdItem {
+    padding-top: 5%;
+    background-color: $whiteColor;
+    width: 100%;
+    height: 446px;
+}
+
+.homeFourItem {
+    padding-top: 5%;
+    background-color: $whiteColor;
+    width: 100%;
+    height: 446px;
+}
+
+.flexStatsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 60%;
+    margin: auto;
+}
+
+.statsItem {
+    img {
+        display: flex;
+        margin: auto;
+    }
+
+    h3,
+    p {
+        text-align: center;
+        margin: 0;
+    }
+
+    h3 {
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 60px;
+        line-height: 70px;
+        letter-spacing: -0.02em;
+        color: #000000;
+        margin-top: 3px;
+        margin-bottom: 13px;
+    }
+
+    p {
+        color: #777777;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 29px;
+        letter-spacing: -0.02em;
+    }
+}
+
+.geralContainer {
+    width: 100%;
+    max-width: $containerMaxWIdth;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin: auto;
+    // gap: 148px;
+}
+
+.geralTextContainer {
+    max-width: 520px;
+    word-break: initial;
+}
+
+.firstTextContainer {
+    color: $whiteColor;
+
+    h1 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 52px;
+        line-height: 61px;
+        letter-spacing: -0.02em;
+    }
+
+    p {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: -0.02em;
+    }
+}
+
+.secondTextContainer {
+    color: $blackColor;
+
+    h1 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 47px;
+        letter-spacing: -0.02em;
+    }
+
+    p {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: -0.02em;
+    }
+
+    button {
+        width: 349px;
+        height: 58px;
+
+        color: $whiteColor;
+        background: #0b0c10;
+
+        border: none;
+        outline: none;
+        border-radius: 8px;
+
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 35px;
+        letter-spacing: -0.02em;
+
+        margin-top: 15%;
+    }
+}
+
+.thirdTextContainer {
+    h2 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 47px;
+        letter-spacing: -0.02em;
+        width: 100%;
+    }
+}
+
+.informationItem {
+    h5,
+    p {
+        margin: 15px 0;
+    }
+
+    h5 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 35px;
+        letter-spacing: -0.02em;
+    }
+
+    a {
+        color: #2439f3;
+        text-decoration: none;
+    }
+}
+
+.imageBackground {
+    width: 100%;
+    height: 250px;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+.firstBackground {
+    background-image: url(../../assets/firstBackground.png);
+}
+
+.secondBackground {
+    background-image: url(../../assets/secondBackground.png);
+}
+
+.thirdBackground {
+    background-image: url(../../assets/thirdBackground.png);
+}
+
+.flexBasics {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 1504px) {
+    .geralContainer {
+        max-width: 80%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1100px) {
+    .geralContainer {
+        max-width: 80%;
+        display: block;
+    }
+
+    .imageContainer {
+        img {
+            float: right;
+        }
+    }
+
+    .homeFirstItem {
+        padding-bottom: 5%;
+    }
+
+    .homeSecondItem {
+        height: 90vh !important;
+    }
+
+    .homeThirdItem {
+        display: flex;
+        margin: auto;
+        padding-top: 0;
+    }
+
+    .homeFourItem {
+        height: 100vh;
+
+        .imageContainer {
+            img {
+                margin-top: -30%;
+            }
+        }
+    }
+
+    .flexStatsContainer {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 1005px) {
+    .imageContainer {
+
+
+        img {
+            max-width: 90%;
+            float: right;
+        }
+    }
+
+    .homeSecondItem {
+        
+        .imageContainer {
+            max-width: 80%;
+            img {
+                display: flex;
+                align-items: center;
+                margin: auto;
+                float: unset;
+                padding-top: 15%;
+                padding-bottom: 15%;
+            }
+        }
+    }
+
+    .statsItem {
+        h3 {
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 40px;
+            line-height: 70px;
+            letter-spacing: -0.02em;
+            color: #000000;
+            margin-top: 3px;
+            margin-bottom: 13px;
+        }
+    
+        p {
+            color: #777777;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 29px;
+            letter-spacing: -0.02em;
+        }
+    }
+
+    .homeThirdItem {
+        margin: 0;
+    }
+
+    .flexStatsContainer {
+        gap: 10%;
+        margin: 0;
+    }
+}
