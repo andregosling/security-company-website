@@ -107,7 +107,7 @@ export const Home = () => {
                     </div>
                     <div className={styles.homeFirstInsert} style={width > 1005 ? { height: height - ((40 / 100) * height) } : { height: '100vh' }}>
                         <div className={`${styles.geralContainer} ${styles.aboutUsContainer}`}>
-                            <div data-aos='fade-right'>
+                            <div data-aos='fade-right' className={styles.insertedImage}>
                                 <img src={aboutUs} alt="Imagem ilustrativa sobre a empresa" />
                             </div>
                             <div className={`${styles.geralTextContainer} ${styles.insertedTextContainer}`} data-aos='fade-left'>
