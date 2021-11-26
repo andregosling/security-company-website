@@ -107,10 +107,10 @@ export const Home = () => {
                     </div>
                     <div className={styles.homeFirstInsert} style={width > 1005 ? { height: height - ((40 / 100) * height) } : { height: '100vh' }}>
                         <div className={`${styles.geralContainer} ${styles.aboutUsContainer}`}>
-                            <div>
+                            <div data-aos='fade-right'>
                                 <img src={aboutUs} alt="Imagem ilustrativa sobre a empresa" />
                             </div>
-                            <div className={`${styles.geralTextContainer} ${styles.insertedTextContainer}`}>
+                            <div className={`${styles.geralTextContainer} ${styles.insertedTextContainer}`} data-aos='fade-left'>
                                 <h2>
                                     <TextTransition
                                         direction={'down'}
