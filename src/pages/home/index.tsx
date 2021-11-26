@@ -90,7 +90,7 @@ export const Home = () => {
             <Header />
             <main className={styles.homeMain}>
                 <div>
-                    <div className={`${styles.homeFirstItem}`} style={width > 1005 ? { height: height - ((20 / 100) * height) } : { height: '100vh' }}>
+                    <div className={`${styles.homeFirstItem}`}>
                         <div className={styles.geralContainer}>
                             <div data-aos="fade-right">
                                 <div className={`${styles.geralTextContainer} ${styles.firstTextContainer}`}>
@@ -196,7 +196,7 @@ export const Home = () => {
                                         <div className={styles.informationItem}>
                                             <h5>Redes sociais</h5>
                                             <div className={styles.flexBasics}>
-                                                <a href="https://www.instagram.com/sioux.seguranca/" target='_blank'><img src={instagramIcon} alt="Logo do instagram" /></a>
+                                                <a href="https://instagram.com/keepcourtkc" target='_blank'><img src={instagramIcon} alt="Logo do instagram" /></a>
                                             </div>
                                         </div>
                                     </div>
