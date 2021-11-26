@@ -2,7 +2,10 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './main.module.scss';
 
 import AOS from 'aos';
-import { useSpring, animated } from 'react-spring';
+
+import { useSpring, animated, useTransition } from 'react-spring';
+
+import TextTransition, { presets } from "react-text-transition";
 
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
@@ -13,14 +16,66 @@ import socialsImage from '../../assets/socialsImage.png';
 import instagramIcon from '../../assets/instagramIcon.png';
 import usersSecurity from '../../assets/usersSecurity.png';
 import casesSecurity from '../../assets/casesSecurity.png';
+import aboutUs from '../../assets/aboutUs.png';
 
 import { format } from '../../utils/functions';
 
+const copysAbout = [
+    <>
+        <h2>Afinal, quem somos?</h2>
+        <p>Somos uma empresa de segurança focada em tecnologia, formada por pessoas capacitadas  em segurança, fornecendo segurança de alto nível isso porque prezamos pela excelência em todas as etapas do processo.</p>
+    </>,
+    <>
+        <h2>Conheça os nossos valores!</h2>
+        <p>Ética, Inovação eTransparência são os pilares da nossa empresa. Presentes em cada momento do nosso dia, eles fazem a diferença no nosso relacionamento com os nossos clientes.</p>
+    </>,
+    <>
+        <h2>Qual visão nós temos?</h2>
+        <p>A visão da empresa é ser reconhecida como app referência em soluções de segurança e serviços, integrando com harmonia, tecnologia e pessoas.</p>
+    </>,
+    <>
+        <h2>Ok, mas e sobre a nossa missão?</h2>
+        <p>A nossa missão final é levar tranquilidade aos nossos clientes, através de soluções integradas e especializadas em segurança e serviços.</p>
+    </>,
+]
+
+const copysText = [
+    { title: 'Afinal, quem somos?', text: 'Somos uma empresa de segurança focada em tecnologia, formada por pessoas capacitadas  em segurança, fornecendo segurança de alto nível isso porque prezamos pela excelência em todas as etapas do processo.' },
+    { title: 'Conheça os nossos valores!', text: 'Ética, Inovação eTransparência são os pilares da nossa empresa. Presentes em cada momento do nosso dia, eles fazem a diferença no nosso relacionamento com os nossos clientes.' },
+    { title: 'Qual visão nós temos?', text: 'A visão da empresa é ser reconhecida como app referência em soluções de segurança e serviços, integrando com harmonia, tecnologia e pessoas.' },
+    { title: 'Ok, mas e sobre a nossa missão?', text: 'A nossa missão final é levar tranquilidade aos nossos clientes, através de soluções integradas e especializadas em segurança e serviços.' }
+]
+
 export const Home = () => {
+    const [width, setWidth] = useState(0);
+    const [height, setHeight] = useState(0);
+    const [actualCopy, setActualCopy] = useState(<div></div>);
+    const [flip, set] = useState(false);
+    const [index, setIndex] = useState(0);
+
     useEffect(() => {
         AOS.init({
             duration: 1000
         });
+
+        setWidth(document.documentElement.clientWidth);
+        setHeight(window.screen.height);
+
+        window.addEventListener("resize", () => {
+            setWidth(document.documentElement.clientWidth);
+            setHeight(window.screen.height);
+        });
+
+        setActualCopy(copysAbout[0]);
+
+        const intervalCopy: any = setInterval(() => {
+            setActualCopy(copysAbout[Math.floor(Math.random() * copysAbout.length)]);
+            setIndex(Math.floor(Math.random() * copysText.length))
+        }, 10000)
+
+        return () => {
+            clearInterval(intervalCopy);
+        }
     }, [])
 
     const scrollDestinationRef = useRef<any>();
@@ -30,14 +85,12 @@ export const Home = () => {
     });
     const casesStats = useSpring({ val: 202670, from: { val: 0 }, config: { duration: 4000 } });
 
-    console.log(window.visualViewport.scale)
-
     return (
         <>
             <Header />
-            <main className={styles.homeMain} style={{ width: document.documentElement.clientWidth }}>
+            <main className={styles.homeMain}>
                 <div>
-                    <div className={`${styles.homeFirstItem}`} style={{ height: window.screen.height - ((20 / 100) * window.screen.height), width: document.documentElement.clientWidth }}>
+                    <div className={`${styles.homeFirstItem}`} style={width > 1005 ? { height: height - ((20 / 100) * height) } : { height: '100vh' }}>
                         <div className={styles.geralContainer}>
                             <div data-aos="fade-right">
                                 <div className={`${styles.geralTextContainer} ${styles.firstTextContainer}`}>
@@ -52,7 +105,32 @@ export const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.homeSecondItem} style={{ height: window.screen.height - ((40 / 100) * window.screen.height) }}>
+                    <div className={styles.homeFirstInsert} style={width > 1005 ? { height: height - ((40 / 100) * height) } : { height: '100vh' }}>
+                        <div className={`${styles.geralContainer} ${styles.aboutUsContainer}`}>
+                            <div>
+                                <img src={aboutUs} alt="Imagem ilustrativa sobre a empresa" />
+                            </div>
+                            <div className={`${styles.geralTextContainer} ${styles.insertedTextContainer}`}>
+                                <h2>
+                                    <TextTransition
+                                        direction={'down'}
+                                        text={copysText[index].title}
+                                        springConfig={presets.wobbly}
+
+                                    />
+                                </h2>
+                                <p>
+                                    <TextTransition
+                                        direction={'down'}
+                                        text={copysText[index].text}
+                                        springConfig={presets.wobbly}
+                                    />
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className={styles.homeSecondItem} style={width > 1005 ? { height: height - ((40 / 100) * height) } : { height: '100vh' }}>
                         <div className={styles.geralContainer}>
                             <div data-aos="fade-right">
                                 <div className={`${styles.geralTextContainer} ${styles.secondTextContainer}`}>
@@ -97,7 +175,7 @@ export const Home = () => {
                         </div>
                     </div>
                     <div className={`${styles.imageBackground} ${styles.thirdBackground}`}></div>
-                    <div className={styles.homeFourItem} style={{ height: window.screen.height }}>
+                    <div className={styles.homeFourItem} style={{ height: height }}>
                         <div className={styles.geralContainer}>
                             <div data-aos="fade-right">
                                 <div className={`${styles.geralTextContainer} ${styles.thirdTextContainer}`}>

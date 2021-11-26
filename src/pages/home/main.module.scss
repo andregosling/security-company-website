@@ -29,6 +29,35 @@
     height: 446px;
 }
 
+.homeFirstInsert {
+    background-color: $secondWhiteColor;
+}
+
+.insertedTextContainer {
+    width: 100%;
+    margin-top: 2rem;
+
+    
+    h2, p {
+        text-align: center;
+
+        span{
+            text-align: center;
+        }
+    }
+    
+}
+
+@keyframes slide-right {
+    from {
+       margin-left: -500px;
+    }
+
+    to {
+       margin-left: 0%;
+    }
+ }
+
 .flexStatsContainer {
     display: flex;
     align-items: center;
@@ -81,7 +110,6 @@
     align-items: flex-start;
 
     margin: auto;
-    // gap: 148px;
 }
 
 .geralTextContainer {
@@ -207,6 +235,10 @@
     align-items: center;
 }
 
+.aboutUsContainer{
+    padding-top: 5rem;
+}
+
 @media (max-width: 1504px) {
     .geralContainer {
         max-width: 80%;
@@ -272,13 +304,12 @@
     .homeSecondItem {
         
         .imageContainer {
-            max-width: 80%;
             img {
                 display: flex;
                 align-items: center;
                 margin: auto;
                 float: unset;
-                padding-top: 15%;
+                padding-top: 25%;
                 padding-bottom: 15%;
             }
         }
@@ -315,4 +346,25 @@
         gap: 10%;
         margin: 0;
     }
+
+    .secondTextContainer{
+        margin: auto;
+
+        button {
+            max-width: 80%;
+            font-size: 150%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 15%;
+        }
+    }
 }
+
+
+.kaiser {
+    display: flex;
+}
+
