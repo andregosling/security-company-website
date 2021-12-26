@@ -174,7 +174,7 @@ export const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={`${styles.imageBackground} ${styles.thirdBackground}`}></div>
+                    {/* <div className={`${styles.imageBackground} ${styles.thirdBackground}`}></div> */}
                     <div className={styles.homeFourItem} style={{ height: height }}>
                         <div className={styles.geralContainer}>
                             <div data-aos="fade-right">
