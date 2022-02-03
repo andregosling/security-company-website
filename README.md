@@ -1,10 +1,10 @@
-# Security Empress Website
+# Security Company Website
 
 Criado por mim usando React, com Typescript.
 
 ## Visualização
 
-Para ver o site criado, [clique aqui](https://security-empress.andregosling.com).
+Para ver o site criado, [clique aqui](https://security-company.andregosling.com).
 
 ## Portifólio
 
